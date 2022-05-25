@@ -85,7 +85,7 @@ while(memfile.good())
   {
       getline(memfile,memtotal);
       pos=memtotal.find("MemTotal");
-      if(pos!=string::npos) // string::npos is
+      if(pos!=string::npos) 
         {
           break;
         }
@@ -116,7 +116,7 @@ while(memavfile.good())
   {
       getline(memavfile,memavail);
       pos=memavail.find("MemAvailable");
-      if(pos!=string::npos) // string::npos is
+      if(pos!=string::npos) 
         {
           break;
         }
