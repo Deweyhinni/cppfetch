@@ -28,7 +28,7 @@ int main() {
     fstream readfile;
     readfile.open("/tmp/fetchuser.txt");
     readfile >> fetchuser;
-    cout << "user: " << fetchuser << endl;
+    cout << "\033[1;36muser:\033[0m       " << fetchuser << endl;
     readfile.close();
     system("rm /tmp/fetchuser.txt");
 
@@ -48,7 +48,7 @@ int main() {
     fstream rfile;
     rfile.open("/tmp/cppfetchtempshell.txt", ios::in| ios::out);
     rfile>> fetchshell;
-    cout << "shell: " << fetchshell << endl;
+    cout << "\033[1;36mshell:\033[0m      " << fetchshell << endl;
     rfile.close(); 
     system("rm -f /tmp/cppfetchtempshell.txt");
    
@@ -73,7 +73,7 @@ while(inFile.good())
         }
   }
 
-    cpumodel.replace(0,12,"cpu model:");
+    cpumodel.replace(0,12,"\033[1;36mcpu model: \033[0m");
     cout << cpumodel << endl;
     
 ifstream memfile;
@@ -141,8 +141,8 @@ while(memavfile.good())
 
   //cout << memusedmb << endl;
 
-  cout << "memory: " << memusedmb << "MB" << "/" << memtotalmb << "MB" << endl;
-
+  cout << "\033[1;36mmemory:\033[0m     " << memusedmb << "MB" << "/" << memtotalmb << "MB" << endl;
+  
     return 0;
 
     
