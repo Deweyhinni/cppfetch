@@ -21,6 +21,26 @@ int main() {
     string memory;
     string drive;
 
+    ifstream distrofile;
+    string distro;
+
+    distrofile.open("/etc/os-release");
+
+    size_t distropos;
+    while (distrofile.good()) 
+    {
+      getline(distrofile,distro);
+      distropos = distro.find("ID");
+      if(distropos!=string::npos) {
+        break;
+      }
+  
+    }
+
+    cout << distro << endl;
+    distro.replace(0,3,"");
+    if(distro == "fedora") {cout << "\033[1;34m        ,'''''.   \n       |   ,.  |  \n       |  |  '_'  \n  ,....|  |..     \n.'  ,_;|   ..'    \n|  |   |  |       \n|  ',_,'  |       \n '.     ,'\n   '''''\033[0m" << endl;}
+
     system("touch /tmp/fetchuser.txt");
     system("echo $USER > /tmp/fetchuser.txt");
 
